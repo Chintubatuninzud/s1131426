@@ -1,0 +1,114 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Country: Mongolia</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Fredoka', sans-serif;
+      background: #fff0f5;
+      color: #444;
+      padding: 20px;
+    }
+
+    h1, h2, h3 {
+      color: #ff94c2;
+    }
+
+    .intro {
+      background: #ffeef9;
+      border-radius: 20px;
+      padding: 30px;
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto 30px auto;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    iframe {
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+
+    .gallery {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    #main-image {
+      max-width: 100%;
+      height: auto;
+      border: 5px solid #ff94c2;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .thumb {
+      width: 100px;
+      margin: 5px;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: transform 0.2s;
+    }
+
+    .thumb:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+
+  <section class="intro">
+    <h1>My Country: Mongolia 🇲🇳</h1>
+    <p>
+      Mongolia is a landlocked country in East and Central Asia known for its vast steppes, nomadic traditions, and rich cultural heritage.
+      The capital city, Ulaanbaatar, sits at the heart of the nation and blends ancient culture with modern life.
+    </p>
+    <p>
+      Historically home to the great Mongol Empire led by Genghis Khan, Mongolia is proud of its history of resilience and independence.
+      Traditional customs such as horsemanship, wrestling, and throat singing are still alive today.
+    </p>
+    <p>
+      The annual Naadam Festival showcases the "Three Manly Games" of wrestling, horse racing, and archery.
+      Mongolia’s breathtaking landscapes range from the Gobi Desert to snowy mountains and serene grasslands.
+    </p>
+  </section>
+
+  <section class="intro">
+    <h2>Discover Mongolia Through Video 🎥</h2>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/EDg4pDiVR0U?start=75" frameborder="0" allowfullscreen></iframe>
+  </section>
+
+  <section class="intro">
+    <h2>Gallery: Beautiful Mongolia 📸</h2>
+    <div class="gallery">
+      <img id="main-image" src="gallery/image1.jpg" alt="Main View" />
+      <div>
+        <img src="gallery/image1.jpg" class="thumb" />
+        <img src="gallery/image2.jpg" class="thumb" />
+        <img src="gallery/image3.jpg" class="thumb" />
+      </div>
+    </div>
+  </section>
+
+  <script>
+    $(document).ready(function () {
+      $(".thumb").click(function () {
+        const newSrc = $(this).attr("src");
+        $("#main-image").attr("src", newSrc);
+      });
+    });
+  </script>
+
+</body>
+</html>
