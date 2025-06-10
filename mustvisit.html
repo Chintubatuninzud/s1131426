@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Must-Visit Places in Mongolia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <style>
+    :root {
+      --main-bg: #fff0f5;
+      --card-bg: #ffeef9;
+      --accent: #ff94c2;
+      --text-color: #444;
+    }
+    body {
+      margin: 0;
+      font-family: 'Fredoka', sans-serif;
+      background: var(--main-bg);
+      color: var(--text-color);
+      overflow-x: hidden;
+    }
+    header {
+      background-color: var(--accent);
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+      border-bottom-left-radius: 25px;
+      border-bottom-right-radius: 25px;
+      position: relative;
+    }
+    header::after {
+      content: "🐾";
+      font-size: 3rem;
+      position: absolute;
+      bottom: 10px;
+      right: 20px;
+      animation: pawBounce 2s infinite;
+    }
+    @keyframes pawBounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      padding: 0;
+      margin-top: 10px;
+    }
+    nav li {
+      margin: 0 15px;
+    }
+    nav a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      font-size: 1.1em;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #ffdcf0;
+    }
+    main {
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .intro {
+      background: var(--card-bg);
+      border-radius: 20px;
+      padding: 30px;
+      text-align: center;
+      max-width: 700px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      animation: fadeIn 1s ease-in-out;
+      margin-bottom: 30px;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .gallery-main-img {
+      max-width: 100%;
+      height: auto;
+      border: 5px solid var(--accent);
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+    .thumb {
+      width: 100px;
+      cursor: pointer;
+      margin: 5px;
+      border-radius: 8px;
+      border: 2px solid transparent;
+      transition: border 0.2s;
+    }
+    .thumb:hover, .thumb.active {
+      border: 2px solid var(--accent);
+    }
+    footer {
+      margin-top: 40px;
+      background: var(--accent);
+      color: white;
+      padding: 15px;
+      border-top-left-radius: 25px;
+      border-top-right-radius: 25px;
+      text-align: center;
+    }
+    @media (max-width: 600px) {
+      nav ul {
+        flex-direction: column;
+      }
+      nav li {
+        margin: 10px 0;
+      }
+      .intro {
+        padding: 15px;
+      }
+      .thumb {
+        width: 70px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Must-Visit Places in Mongolia 🏞️</h1>
+    <nav>
+      <ul>
+        <li><a href="my-country.html">My Country</a></li>
+        <li><a href="delights.html">Delights</a></li>
+        <li><a href="mustvisit.html">Must-Visit</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="intro">
+      <h2>Discover Mongolia's Wonders</h2>
+      <p>
+        Mongolia is a land of vast steppes, dramatic mountains, and ancient traditions. From the endless Gobi Desert to the crystal-clear lakes and the vibrant Naadam Festival, Mongolia offers breathtaking natural beauty and a unique nomadic culture. Here are some must-visit places that capture the spirit of Mongolia!
+      </p>
+    </section>
+    <section class="intro">
+      <h3>Watch: Mongolia's Majestic Landscapes</h3>
+      <div style="text-align: center; margin-bottom: 20px;">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/oIEEj2cFcKw?si=oSHzpbj8nFX0kh_O" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>      </div>
+      <h4>Gallery: Top Destinations</h4>
+      <div style="text-align: center;">
+        <img id="main-image" class="gallery-main-img" src="assets/gobi1.jpg" alt="Gobi Desert" />
+        <div id="slider-controls" style="margin-bottom:10px;">
+          <button id="prev-btn" style="padding:6px 16px; border-radius:8px; border:none; background:var(--accent); color:white; font-weight:bold; margin-right:10px; cursor:pointer;">&#8592; Prev</button>
+          <button id="next-btn" style="padding:6px 16px; border-radius:8px; border:none; background:var(--accent); color:white; font-weight:bold; cursor:pointer;">Next &#8594;</button>
+        </div>
+        <div>
+          <img src="assets/gobi.jpg" class="thumb active" alt="Gobi Desert 1" />
+          <img src="assets/khuvsgul.jpg" class="thumb" alt="Khuvsgul" />
+          <img src="assets/erdene-zuu.webp" class="thumb" alt="Erdene Zuu" />
+        </div>
+      </div>
+      <div style="margin-top: 20px; text-align: left;">
+        <ul style="list-style: disc; max-width: 600px; margin: 0 auto; text-align: left;">
+          <li><strong>Gobi Desert:</strong> Explore the vast sand dunes, flaming cliffs, and unique wildlife of one of the world's largest deserts.</li>
+          <li><strong>Khuvsgul Lake:</strong> Known as the "Blue Pearl of Mongolia," this pristine lake is surrounded by mountains and forests, perfect for nature lovers.</li>
+          <li><strong>Erdene Zuu Monastery:</strong> The oldest Buddhist monastery in Mongolia, located in the ancient city of Kharkhorin, rich in history and culture.</li>
+        </ul>
+      </div>
+      <div style="margin-top:30px;">
+        <h4>Map: Gobi Desert Location</h4>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1147847.076143353!2d102.80124304999999!3d43.80413395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5dcae8e6b2b7b8c9%3A0x5e4b1b8b8b8b8b8b!2sGobi%20Desert!5e0!3m2!1sen!2smn!4v1718012345678!5m2!1sen!2smn"
+          width="100%" height="300" style="border:0; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,0.08);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <div style="margin-top: 20px; text-align: center;">
+        <p>Explore these incredible places and immerse yourself in the rich culture and stunning landscapes of Mongolia!</p>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d768017.9233068275!2d99.81837846510727!3d51.018689118414855!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5d0e5d1ba6b92eab%3A0xd9305b7b011f9111!2sKhuvsgul%20Lake!5e1!3m2!1sen!2stw!4v1749520896095!5m2!1sen!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <div style="margin-top: 20px; text-align: center;">
+       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2710.7848102749103!2d102.83840757687861!3d47.20122427115562!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5d9cf209068cf281%3A0x9e4e07fa516f844f!2sErdene%20Zuu%20Monastery!5e0!3m2!1sen!2stw!4v1749520970570!5m2!1sen!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </section>
+    <script>
+      // Image slider/carousel for Gobi Desert
+      const images = [
+        "assets/gobi.jpg",
+        "assets/khuvsgul.jpg",
+        "assets/erdene-zuu.webp",
+      ];
+      let currentIndex = 0;
+
+      function showImage(index) {
+        $("#main-image").attr("src", images[index]);
+        $(".thumb").removeClass("active");
+        $(".thumb").eq(index).addClass("active");
+      }
+
+      $("#prev-btn").click(function () {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        showImage(currentIndex);
+      });
+
+      $("#next-btn").click(function () {
+        currentIndex = (currentIndex + 1) % images.length;
+        showImage(currentIndex);
+      });
+
+      $(".thumb").click(function () {
+        currentIndex = $(this).index();
+        showImage(currentIndex);
+      });
+
+      // Initialize
+      showImage(currentIndex);
+    </script>
+  </main>
+  <footer>
+    <p>&copy; 2025 Amandai. Made with 🐾 and wanderlust.</p>
+  </footer>
+</body>
+</html>

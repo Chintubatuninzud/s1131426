@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Recommended Delights of Mongolia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <style>
+    :root {
+      --main-bg: #fff0f5;
+      --card-bg: #ffeef9;
+      --accent: #ff94c2;
+      --text-color: #444;
+    }
+    body {
+      margin: 0;
+      font-family: 'Fredoka', sans-serif;
+      background: var(--main-bg);
+      color: var(--text-color);
+      overflow-x: hidden;
+    }
+    header {
+      background-color: var(--accent);
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+      border-bottom-left-radius: 25px;
+      border-bottom-right-radius: 25px;
+      position: relative;
+    }
+    header::after {
+      content: "🐾";
+      font-size: 3rem;
+      position: absolute;
+      bottom: 10px;
+      right: 20px;
+      animation: pawBounce 2s infinite;
+    }
+    @keyframes pawBounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      padding: 0;
+      margin-top: 10px;
+    }
+    nav li {
+      margin: 0 15px;
+    }
+    nav a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      font-size: 1.1em;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #ffdcf0;
+    }
+    main {
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .delights-flex {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 40px;
+      width: 100%;
+      max-width: 1100px;
+    }
+    .gallery-section {
+      background: var(--card-bg);
+      border-radius: 20px;
+      padding: 30px 20px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      max-width: 420px;
+      flex: 1 1 350px;
+      min-width: 320px;
+      text-align: center;
+    }
+    .gallery-main-img {
+      max-width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border: 5px solid var(--accent);
+      border-radius: 10px;
+      margin-bottom: 10px;
+      background: #fff;
+    }
+    .thumbs {
+      margin-bottom: 10px;
+    }
+    .thumb {
+      width: 70px;
+      height: 50px;
+      object-fit: cover;
+      cursor: pointer;
+      margin: 4px;
+      border-radius: 8px;
+      border: 2px solid transparent;
+      transition: border 0.2s;
+      background: #fff;
+    }
+    .thumb:hover, .thumb.active {
+      border: 2px solid var(--accent);
+    }
+    .desc {
+      min-height: 80px;
+      margin: 10px 0 0 0;
+      font-size: 1.08em;
+      color: #444;
+      background: #fff;
+      border-radius: 10px;
+      padding: 10px;
+    }
+    .shorts-section {
+      flex: 1 1 320px;
+      min-width: 320px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: var(--card-bg);
+      border-radius: 20px;
+      padding: 30px 20px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      max-width: 420px;
+    }
+    .shorts-title {
+      font-size: 1.2em;
+      color: var(--accent);
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+    .shorts-iframe {
+      border-radius: 12px;
+      width: 100%;
+      min-width: 250px;
+      max-width: 350px;
+      aspect-ratio: 9/16;
+      border: none;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+    @media (max-width: 900px) {
+      .delights-flex {
+        flex-direction: column;
+        align-items: center;
+      }
+      .gallery-section, .shorts-section {
+        max-width: 98vw;
+      }
+    }
+    footer {
+      margin-top: 40px;
+      background: var(--accent);
+      color: white;
+      padding: 15px;
+      border-top-left-radius: 25px;
+      border-top-right-radius: 25px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Recommended Delights of Mongolia 🍲</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="my-country.html">My Country</a></li>
+        <li><a href="mustvisit.html">Must-Visit</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="intro" style="max-width:900px;">
+      <h2>Traditional Mongolian Foods</h2>
+      <p>
+        Mongolian cuisine is hearty and flavorful, reflecting the country's nomadic heritage and cold climate. Here are some must-try dishes!
+      </p>
+    </section>
+    <div class="delights-flex">
+      <!-- Gallery Section -->
+      <div class="gallery-section">
+        <img id="main-img" class="gallery-main-img" src="assets/horhog.webp" alt="Horhog" />
+        <div class="thumbs">
+          <img src="assets/horhog.webp" class="thumb active" alt="Horhog" data-index="0"/>
+          <img src="assets/Buuz.jpg" class="thumb" alt="Buuz" data-index="1"/>
+          <img src="assets/tsuivan.jpg" class="thumb" alt="Tsuivan" data-index="2"/>
+          <img src="assets/tsaitai_tsuivan.jpeg" class="thumb" alt="Tsaitai Tsuivan" data-index="3"/>
+        </div>
+        <div class="desc" id="food-desc">
+          <strong>Horhog:</strong> A traditional Mongolian barbecue made by cooking lamb with hot stones inside a sealed metal container. The result is tender, juicy meat infused with smoky flavors.
+        </div>
+        <div style="margin-top:12px;">
+          <button id="prev-btn" style="padding:6px 16px; border-radius:8px; border:none; background:var(--accent); color:white; font-weight:bold; margin-right:10px; cursor:pointer;">&#8592; Prev</button>
+          <button id="next-btn" style="padding:6px 16px; border-radius:8px; border:none; background:var(--accent); color:white; font-weight:bold; cursor:pointer;">Next &#8594;</button>
+        </div>
+      </div>
+      <!-- Shorts Section -->
+      <div class="shorts-section">
+        <div class="shorts-title">Watch: Mongolian Food Short</div>
+        <div style="position:relative;width:100%;padding-bottom:56.25%;max-width:420px;">
+          <iframe 
+            class="shorts-iframe"
+            src="https://www.youtube-nocookie.com/embed/pQaFXUHOQI0"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+            style="position:absolute;top:0;left:0;width:100%;height:100%;border-radius:12px;">
+          </iframe>
+        </div>
+      </div>
+    </div>
+    <script>
+      // Gallery data
+      const foods = [
+        {
+          img: "assets/horhog.webp",
+          alt: "Horhog",
+          desc: "<strong>Horhog:</strong> A traditional Mongolian barbecue made by cooking lamb with hot stones inside a sealed metal container. The result is tender, juicy meat infused with smoky flavors."
+        },
+        {
+          img: "assets/Buuz.jpg",
+          alt: "Buuz",
+          desc: "<strong>Buuz:</strong> Steamed dumplings filled with seasoned minced meat (usually beef or mutton). A staple at Mongolian celebrations and Lunar New Year."
+        },
+        {
+          img: "assets/tsuivan.jpg",
+          alt: "Tsuivan",
+          desc: "<strong>Tsuivan:</strong> Stir-fried handmade noodles with beef or mutton and vegetables. A comforting and filling everyday dish."
+        },
+        {
+          img: "assets/tsaitai_tsuivan.jpeg",
+          alt: "Tsaitai Tsuivan",
+          desc: "<strong>Tsaitai Tsuivan:</strong> A vegetarian version of tsuivan, featuring noodles stir-fried with a variety of fresh vegetables."
+        }
+      ];
+      let current = 0;
+      function showFood(idx) {
+        $("#main-img").attr("src", foods[idx].img).attr("alt", foods[idx].alt);
+        $("#food-desc").html(foods[idx].desc);
+        $(".thumb").removeClass("active");
+        $(".thumb[data-index='" + idx + "']").addClass("active");
+        current = idx;
+      }
+      $(".thumb").click(function () {
+        const idx = parseInt($(this).attr("data-index"));
+        showFood(idx);
+      });
+      $("#prev-btn").click(function () {
+        let idx = (current - 1 + foods.length) % foods.length;
+        showFood(idx);
+      });
+      $("#next-btn").click(function () {
+        let idx = (current + 1) % foods.length;
+        showFood(idx);
+      });
+      // Initialize
+      showFood(0);
+    </script>
+  </main>
+  <footer>
+    <p>&copy; 2025 Amandai. Made with 🐾 and delicious flavors.</p>
+  </footer>
+</body>
+</html>
